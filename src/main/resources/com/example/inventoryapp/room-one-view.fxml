@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<TabPane fx:id="generalTabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane fx:id="generalTabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventoryapp.RoomOne">
   <tabs>
-    <Tab onSelectionChanged="#onRoom1Click" text="Pièce 1">
+    <Tab text="Pièce 1">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -36,33 +36,7 @@
                </children></AnchorPane>
       </content>
     </Tab>
-      <Tab onSelectionChanged="#onRoom2Click" text="Pièce2">
-         <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="600.0" spacing="30.0">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#addProduct" text="Ajouter un produit" />
-                        <Button mnemonicParsing="false" onAction="#addRoom" text="Ajouter une pièce" />
-                        <Button mnemonicParsing="false" onAction="#deleteRoom" text="Supprimer une pièce" />
-                     </children>
-                     <padding>
-                        <Insets left="15.0" />
-                     </padding>
-                  </HBox>
-                  <TableView layoutY="45.0" prefHeight="325.0" prefWidth="600.0">
-                     <columns>
-                        <TableColumn prefWidth="75.0" text="Nom" />
-                        <TableColumn prefWidth="75.0" text="Code EAN" />
-                        <TableColumn prefWidth="75.0" text="Quantité" />
-                        <TableColumn prefWidth="75.0" text="Supprimer" />
-                     </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
-         </content>
-      </Tab>
-      <Tab onSelectionChanged="#onRoom3Click" text="Pièce 3">
+      <Tab text="Pièce 2">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
