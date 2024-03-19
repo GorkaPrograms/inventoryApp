@@ -10,11 +10,11 @@ public class RoomOne {
     @FXML
     private TabPane generalTabPane;
     @FXML
-    private TableColumn nameCol;
+    private TableColumn name;
     @FXML
-    private TableColumn eanCol;
+    private TableColumn ean_code;
     @FXML
-    private TableColumn quantityCol;
+    private TableColumn quantity;
     @FXML
     private TableColumn deleteCol;
     @FXML
@@ -23,9 +23,11 @@ public class RoomOne {
 
     public void setInventoryViewModel(InventoryViewModel inventoryViewModel) {
         this.inventoryViewModel = inventoryViewModel;
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        eanCol.setCellValueFactory(new PropertyValueFactory<>("ean_code"));
-        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        ean_code.setCellValueFactory(new PropertyValueFactory<>("ean_code"));
+        quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+
+        productTableView.itemsProperty().bind(inventoryViewModel.productProperty());
     }
 
     public void addProduct(){

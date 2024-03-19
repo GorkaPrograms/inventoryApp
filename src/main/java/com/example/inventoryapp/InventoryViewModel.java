@@ -15,14 +15,13 @@ public class InventoryViewModel {
     private InventoryModel inventoryModel;
     private ListProperty<Product> product = new SimpleListProperty(FXCollections.observableList(new ArrayList<>()));
 
-
     public void setModel(InventoryModel inventoryModel) {
         this.inventoryModel = inventoryModel;
         Timeline timeline = new Timeline(
                 new KeyFrame(
                         Duration.millis(500),
                         e->{
-                            inventoryModel.getProducts();
+                            setProduct(FXCollections.observableList(inventoryModel.getProducts()));
                         }
                 )
         );
