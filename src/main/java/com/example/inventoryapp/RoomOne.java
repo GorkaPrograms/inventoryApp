@@ -6,16 +6,21 @@ import javafx.scene.control.TabPane;
 public class RoomOne {
     @FXML
     private TabPane generalTabPane;
+    private InventoryViewModel inventoryViewModel;
+
+    public void setInventoryViewModel(){
+        this.inventoryViewModel = inventoryViewModel;
+    }
 
     public void addProduct(){
-        System.out.println("addProduct");
+        this.inventoryViewModel.handleAddProduct();
     }
 
     public void addRoom(){
-        System.out.println("addRoom");
+        this.inventoryViewModel.handleAddRoom();
     }
 
     public void deleteRoom(){
-        System.out.println("deleteRoom");
+        this.inventoryViewModel.handleDeleteRoom();
     }
 }
