@@ -27,9 +27,9 @@
                   </HBox>
                   <TableView layoutY="45.0" prefHeight="325.0" prefWidth="600.0">
                     <columns>
-                      <TableColumn fx:id="name" prefWidth="75.0" text="Nom" />
-                      <TableColumn fx:id="ean_code" prefWidth="75.0" text="Code EAN" />
-                        <TableColumn fx:id="quantity" prefWidth="75.0" text="Quantité" />
+                      <TableColumn prefWidth="75.0" text="Nom" />
+                      <TableColumn prefWidth="75.0" text="Code EAN" />
+                        <TableColumn prefWidth="75.0" text="Quantité" />
                         <TableColumn prefWidth="75.0" text="Supprimer" />
                     </columns>
                   </TableView>
