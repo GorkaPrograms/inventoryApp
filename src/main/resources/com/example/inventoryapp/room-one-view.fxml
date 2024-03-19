@@ -27,10 +27,10 @@
                   </HBox>
                   <TableView layoutY="45.0" prefHeight="325.0" prefWidth="600.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Nom" />
-                      <TableColumn prefWidth="75.0" text="Code EAN" />
-                        <TableColumn prefWidth="75.0" text="Quantité" />
-                        <TableColumn prefWidth="75.0" text="Supprimer" />
+                      <TableColumn fx:id="nameCol" prefWidth="75.0" text="Nom" />
+                      <TableColumn fx:id="eanCol" prefWidth="75.0" text="Code EAN" />
+                        <TableColumn fx:id="quantityCol" prefWidth="75.0" text="Quantité" />
+                        <TableColumn fx:id="deleteCol" prefWidth="75.0" text="Supprimer" />
                     </columns>
                   </TableView>
                </children></AnchorPane>

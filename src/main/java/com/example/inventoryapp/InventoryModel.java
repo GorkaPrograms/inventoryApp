@@ -36,6 +36,19 @@ public class InventoryModel {
     }
 
     public void getProducts(){
+        try {
+            String sql = "SELECT * FROM products ORDER BY id ASC";
+            ResultSet res = stmt.executeQuery(sql);
+            while(res.next()) {
+                String name = res.getString("name");
+                int ean_code = res.getInt("ean_code");
+                int quantity = res.getInt("quantity");
 
+                System.out.println(name + " " + quantity + " " + ean_code);
+            }
+
+        }catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
