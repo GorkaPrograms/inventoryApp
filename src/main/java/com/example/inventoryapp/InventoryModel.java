@@ -1,23 +1,22 @@
 package com.example.inventoryapp;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import java.sql.*;
 
 public class InventoryModel {
 
     private Statement stmt;
 
-    public InventoryModel() {
+    public InventoryModel() throws SQLException {
         this.stmt = connectDB();
         testDB();
     }
 
-    private Statement connectDB(){
+    public Statement connectDB(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3310/inventory";
-            Connection con = DriverManager.getConnection(url, "root", "P@ssw0rd");
+
+            String url = "jdbc:mysql://localhost:3306/inventory";
+            Connection con = DriverManager.getConnection(url, "inventory_user", "1234");
             stmt = con.createStatement();
             return stmt;
         } catch (Exception e) {
@@ -25,8 +24,12 @@ public class InventoryModel {
         }
     }
 
-    private void testDB(){
-        String sql = "SELECT * FROM products";
+    public void testDB() throws SQLException {
+        String sql = "SELECT * FROM product";
         System.out.println(sql);
+        ResultSet res = stmt.executeQuery(sql);
+        while (res.next()) {
+            System.out.println(res.getString("name"));
+        }
     }
 }
