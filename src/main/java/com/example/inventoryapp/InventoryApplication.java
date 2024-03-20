@@ -15,6 +15,8 @@ public class InventoryApplication extends Application {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         stage.setTitle("Application d'inventaire");
+        String css = InventoryApplication.class.getResource("main-view.css").toString();
+        scene.getStylesheets().add(css);
         //
         InventoryModel inventoryModel = new InventoryModel();
         InventoryViewModel inventoryViewModel = new InventoryViewModel();
