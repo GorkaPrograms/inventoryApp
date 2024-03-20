@@ -1,25 +1,25 @@
 package com.example.inventoryapp;
 
-
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 public class InventoryModel {
 
-    private Statement stmt ;
+    private Statement stmt;
     private ArrayList<Product> products;
 
     public InventoryModel() {
-        this.stmt = ConnexionDatabase.connectDB();
+        this.stmt = ConnectDB.connectDB();
         this.products = getProducts();
     }
 
     public void createProduct(String name, int ean_code, int quantity){
         try {
-            String sql = "INSERT INTO products (name,ean_code,quantity) VALUES ('" + name + "', " + ean_code + " " + quantity + "')";
-            System.out.println(sql);
-            //stmt.execute(sql);
+            String sql = "INSERT INTO products (name,ean_code,quantity) VALUES (\""+name+"\","+ean_code+","+quantity+")";
+            stmt.execute(sql);
         }catch (Exception e) {
             throw new RuntimeException(e);
         }
