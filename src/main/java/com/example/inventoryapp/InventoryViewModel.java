@@ -7,8 +7,10 @@ import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class InventoryViewModel {
@@ -29,12 +31,11 @@ public class InventoryViewModel {
         timeline.play();
     }
 
-    public void handleAddProduct(){
-
+    public void handleAddProduct() throws IOException {
+        InventoryApplication.getInstance().loadModalScene(this);
     }
 
     public void handleAddRoom(){
-
     }
 
     public void handleDeleteRoom(){

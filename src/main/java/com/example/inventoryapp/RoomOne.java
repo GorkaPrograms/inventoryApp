@@ -1,10 +1,13 @@
 package com.example.inventoryapp;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.IOException;
 
 public class RoomOne {
     @FXML
@@ -30,7 +33,7 @@ public class RoomOne {
         productTableView.itemsProperty().bind(inventoryViewModel.productProperty());
     }
 
-    public void addProduct(){
+    public void addProduct() throws IOException {
         this.inventoryViewModel.handleAddProduct();
     }
 

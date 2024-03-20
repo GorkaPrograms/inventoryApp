@@ -19,8 +19,8 @@ public class InventoryModel {
     private Statement connectDB(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3310/inventory";
-            Connection con = DriverManager.getConnection(url, "inventory_user", "password");
+            String url = "jdbc:mysql://localhost:3306/inventory";
+            Connection con = DriverManager.getConnection(url, "inventory_user", "1234");
             stmt = con.createStatement();
             return stmt;
         } catch (Exception e) {
