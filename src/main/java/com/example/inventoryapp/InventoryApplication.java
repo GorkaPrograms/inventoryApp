@@ -30,6 +30,8 @@ public class InventoryApplication extends Application {
         FXMLLoader fxmlLoader =  new FXMLLoader(InventoryApplication.class.getResource("room-one-view.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
+        String css = InventoryApplication.class.getResource("main-view.css").toString();
+        scene.getStylesheets().add(css);
         RoomOne roomOne = fxmlLoader.getController();
         roomOne.setInventoryViewModel(inventoryViewModel);
         mainStage.setTitle("Application réserve");
@@ -41,6 +43,8 @@ public class InventoryApplication extends Application {
         FXMLLoader fxmlLoader =  new FXMLLoader(InventoryApplication.class.getResource("add-product-view.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
+        String css = InventoryApplication.class.getResource("main-view.css").toString();
+        scene.getStylesheets().add(css);
         AddProduct addProduct = fxmlLoader.getController();
         addProduct.setInventoryViewModel(inventoryViewModel);
         modalStage.setTitle("Ajouter un produit");

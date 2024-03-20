@@ -34,7 +34,7 @@ public class RoomOne {
     }
 
     public void addProduct() throws IOException {
-        this.inventoryViewModel.handleAddProduct();
+        this.inventoryViewModel.handleAddProductWindow();
     }
 
     public void addRoom(){

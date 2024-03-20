@@ -30,8 +30,11 @@ public class InventoryViewModel {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
+    public void handleAddProduct(String name, int code, int quantity){
+        this.inventoryModel.createProduct(name, code, quantity);
+    }
 
-    public void handleAddProduct() throws IOException {
+    public void handleAddProductWindow() throws IOException {
         InventoryApplication.getInstance().loadModalScene(this);
     }
 

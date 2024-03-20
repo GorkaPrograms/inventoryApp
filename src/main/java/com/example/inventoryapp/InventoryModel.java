@@ -19,8 +19,8 @@ public class InventoryModel {
     private Statement connectDB(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/inventory";
-            Connection con = DriverManager.getConnection(url, "inventory_user", "1234");
+            String url = "jdbc:mysql://localhost:3310/inventory";
+            Connection con = DriverManager.getConnection(url, "inventory_user", "password");
             stmt = con.createStatement();
             return stmt;
         } catch (Exception e) {
@@ -30,9 +30,8 @@ public class InventoryModel {
 
     public void createProduct(String name, int ean_code,int quantity){
         try {
-            String sql = "INSERT INTO products (name,ean_code,quantity) VALUES ('" + name + "', " + ean_code + " " + quantity + "')";
-            System.out.println(sql);
-            //stmt.execute(sql);
+            String sql = "INSERT INTO products (name,ean_code,quantity) VALUES (\""+name+"\","+ean_code+","+quantity+")";
+            stmt.execute(sql);
         }catch (Exception e) {
             throw new RuntimeException(e);
         }
